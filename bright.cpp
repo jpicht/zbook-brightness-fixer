@@ -43,11 +43,9 @@ void set(char* value) {
 	converter >> arg_value;
 
 	converter << arg_value;
-	std::string tester;
-	converter >> tester;
+	std::string tester = converter.str();
 
 	if (tester.compare(value) != 0) {
-		std::cerr << "invalid numeric value: " << value << std::endl;
 		exit(2);
 		return;
 	}
